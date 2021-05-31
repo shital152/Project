@@ -1,0 +1,430 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>CMS</title>
+
+    <style>
+    .main-input .drop{
+    outline: none;
+    padding: 17px 20px;
+    -webkit-appearance: none;
+    border-radius: 0;
+    color: #000;
+    width: 100%;
+    font-size: 16px;
+    line-height: 26px;
+    margin-bottom: 15px;
+    border-radius: var(--card-curve);
+    border: 1px solid var(--text-color);
+    background: #fff; }
+
+    .main-input .drop:focus{
+        border: 1px solid var(--secondary);
+    }
+    </style>
+    
+    <!-- Google fonts -->
+    <link href="//fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
+
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="assets/css/style-starter.css">
+  </head>
+  <body>
+<!-- header -->
+<!-- <header w3-include-html="header.html" class="w3l-header"> -->
+	
+<!-- </header> -->
+<!-- //header -->
+<!-- breadcrum -->
+<section class="w3l-skill-breadcrum">
+  <div class="breadcrum">
+    <div class="container">
+      <p><a href="index.html">Home</a> &nbsp; / &nbsp; Register</p>
+    </div>
+  </div>
+</section>
+<!-- //breadcrum -->
+<section class="w3l-contacts-12" id="contact">
+<div class="container py-5">
+    <div class="contacts12-main py-md-3">
+        <div class="header-section text-center">
+            <h3 class="mb-md-5 mb-4">Register
+        </div>
+        <form action="reg" method="post" class=""  id="registration">
+            <div class="main-input">
+                <input type="text" name="name" placeholder="FirstName" class="contact-input" id="name"  required />
+                <span id="error_name"></span>
+                <input type="text" name="last" placeholder="LastName" class="contact-input" id="lastname"  required />
+                <span id="error_latname"></span>
+                <input type="email" name="user" placeholder="Email" class="contact-input" id="email" required/>
+                <span id="error_email"></span>
+                <input type="number" name="phon" placeholder="Enter your Mobile No" class="contact-input" id="mobile" required/>
+                <span id="error_mobile"></span>
+                <select name="gen" id="gender" class="drop" required>
+                  <option value="">Gender</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+                <span id="error_gender"></span>
+                <select name="rol" id="role" class="drop" required>
+                  <option value="">select your Role</option>
+                  <option value="S">Student</option>
+                  <option value="F">Faculty</option>
+                </select>
+              <span id="error_role"></span>
+                <select name="department" class="drop" id="course" required>
+                    <option value="">select your course</option>
+                    
+                    <option value="MCA 1sem">MCA 1Sem</option>
+                    <option value="MCA 2sem">MCA 2Sem</option>
+                    <option value="MCA 3sem">MCA 3Sem</option>
+                    <option value="MCA 4sem">MCA 4Sem</option>
+                    <option value="MCA 5sem">MCA 5Sem</option>
+                    <option value="MCA 6sem">MCA 6Sem</option>
+                   
+                </select>
+                <span id="error_course"></span>
+              <input type="password" name="pass" placeholder="password" class="contact-input" id="pass" required/>
+              <span id="error_pass"></span>
+              <input type="password" name="cpass" placeholder="ConformPassword" class="contact-input" id="conformpass" required />
+              <span id="error_conformpass"></span>
+            </div>
+            <div class="text-right">
+                <input type="submit" class="btn-secondary btn theme-button" value="Register">
+                
+            </div>
+        </form>
+    </div>
+</div>
+</section>
+    <!-- footer -->
+    <footer class="w3l-footer-29-main" id="footer" w3-include-html="footer.html">
+
+
+    </footer>
+    <!-- Footer -->
+   <!-- jQuery and Bootstrap JS -->
+   <script src="assets/js/jquery-3.3.1.min.js"></script>
+   <script src="assets/js/bootstrap.min.js"></script>
+
+   <!-- Template JavaScript -->
+
+   <!-- stats number counter-->
+   <script src="assets/js/jquery.waypoints.min.js"></script>
+   <script src="assets/js/jquery.countup.js"></script>
+   <script>
+     $('.counter').countUp();
+   </script>
+   <!-- //stats number counter -->
+
+
+   <!-- testimonials owlcarousel -->
+   <script src="assets/js/owl.carousel.js"></script>
+   <script src="assets/js/w3.js"></script>
+   <script>
+    w3.includeHTML();
+    </script>
+   <!-- script for owlcarousel -->
+   <script type="text/javascript">
+  $(function(){
+
+    $("#error_name").hide();
+    $("#error_latname").hide();
+    $("#error_email").hide();
+    $("#error_gender").hide();
+    $("#error_course").hide();
+    $("#error_mobile").hide();
+    $("#error_role").hide();
+    $("#error_pass").hide();
+    $("#error_conformpass").hide();
+    
+    var errorname = false;
+    var errorlastname = false;
+    var erroremail = false;
+    var errorgender = false;
+    var errormobile = false;
+    var errorcoure = false;
+    var errorrole = false;
+    var errorpass = false;
+    var errorconformpass = false;
+
+    $("#name").focusout(function(){
+      check_fname();
+    });
+    $("#lastname").focusout(function(){
+      check_lastname();
+    });
+    $("#email").focusout(function(){
+      check_email();
+    });
+    $("#gender").focusout(function(){
+      check_gender();
+    });
+    $("#mobile").focusout(function(){
+      check_mobile();
+    });
+    $("#course").focusout(function(){
+      check_course();
+    });
+    $("#role").focusout(function(){
+      check_role();
+    });
+    $("#pass").focusout(function(){
+      check_pass();
+    });
+    $("#conformpass").focusout(function(){
+      check_conformpass();
+    });
+
+    function check_fname(){
+      var pattern = /^[a-zA-Z]*$/; 
+      var fname = $("#name").val();
+      if (pattern.test(fname) && fname !==''){
+        $("#error_name").hide();
+        $("#name").css("border-bottom","2px solid #34f458");
+      }else {
+        $("#error_name").html("Should contain only characters");
+        $("#error_name").show();
+        $("#name").css("border-bottom","2px solid #f90a0a");
+        errorname = true; 
+      }
+    }
+
+    
+    function check_lastname(){
+      var pattern = /^[a-zA-Z]*$/; 
+      var lastname = $("#lastname").val();
+      if (pattern.test(lastname) && lastname !==''){
+        $("#error_latname").hide();
+        $("#lastname").css("border-bottom","2px solid #34f458");
+      }else {
+        $("#error_latname").html("Should contain only characters");
+        $("#error_latname").show();
+        $("#lastname").css("border-bottom","2px solid #f90a0a");
+        errorlastname = true; 
+      }
+    }
+
+    function check_gender() {
+      var sgender = $("#gender");
+      
+      if (sgender.val() === "gender") {
+        $("#error_gender").html("Select gender");
+        $("#error_gender").show();
+        $("#gender").css("border-bottom","2px solid #f90a0a");
+        errorgender = true; 
+      }else {
+        $("#error_gender").hide();
+        $("#gender").css("border-bottom","2px solid #34f458");
+        
+      }
+    }
+
+    function check_mobile() {
+      var mo = $("#mobile").val().length;
+      if (mo < 10 || mo > 10) {
+        $("#error_mobile").html("Enter 10 charecters");
+        $("#error_mobile").show();
+        $("#mobile").css("border-bottom","2px solid #f90a0a");
+        errormobile = true;
+      }else {
+        $("#error_mobile").hide();
+        $("#mobile").css("border-bottom","2px solid #34f458");
+      }
+    }
+
+    function check_course() {
+      var cou = $("#course").val();
+      if (cou === "course") {
+        $("#error_course").html("Select course");
+        $("#error_course").show();
+        $("#course").css("border-bottom","2px solid #f90a0a");
+        errorcoure = true; 
+      }else {
+        $("#error_course").hide();
+        $("#course").css("border-bottom","2px solid #34f458");
+        
+      }
+    }
+
+    function check_role() {
+      var cou = $("#role").val();
+      if (cou === "role") {
+        $("#error_role").html("Select course");
+        $("#error_role").show();
+        $("#role").css("border-bottom","2px solid #f90a0a");
+        errorrole = true; 
+      }else {
+        $("#error_role").hide();
+        $("#role").css("border-bottom","2px solid #34f458");
+        
+      }
+    }
+
+
+
+
+    function check_pass(){
+      var password_length = $("#pass").val().length;
+      if (password_length < 8 || password_length > 18) {
+        $("#error_pass").html("atleast 8 to 16 charecters");
+        $("#error_pass").show();
+        $("#pass").css("border-bottom","2px solid #f90a0a");
+        errorpass = true;
+      } else {
+        $("#error_pass").hide();
+        $("#pass").css("border-bottom","2px solid #34f458");
+      }
+    }
+
+    function check_conformpass() {
+      var password = $("#pass").val();
+      var retype_pass =$("#conformpass").val();
+      if (password !== retype_pass) {
+        $("#error_conformpass").html("password did not matched");
+        $("#error_conformpass").show();
+        $("#conformpass").css("border-bottom","2px solid #f90a0a");
+        errorconformpass = true;
+      }else {
+        $("#error_conformpass").hide();
+        $("#conformpass").css("border-bottom","2px solid #34f458");
+
+      }
+    }
+    function check_email() {
+      var pattern = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,3})?$/;
+      var email = $("#email").val();
+      if (pattern.test(email) && email !==''){
+        $("#error_email").hide();
+        $("#email").css("border-bottom","2px solid #34f358");
+      }else {
+        $("#error_email").html("invalid email");
+        $("#error_email").show();
+        $("#email").css("border-bottom","2px solid #f90a0a");
+        erroremail = true;
+      }
+    }
+
+    $("#registration").submit(function() {
+     errorname = false;
+     errorlastname = false;
+     erroremail = false;
+     errorgender = false;
+     errormobile = false;
+     errorcoure = false;
+     errorrole = false;
+     errorpass = false;
+     errorconformpass = false;
+
+     check_fname();
+     check_lastname();
+     check_email();
+     check_gender();
+     check_course();
+     check_role();
+     check_mobile();
+     check_pass();
+     check_conformpass();
+
+     if (errorname === false && errorlastname === false && erroremail === false && errorgender === false && errorcoure === false && errorrole === false && errorpass === false && errorconformpass === false && errormobile === false){
+//        alert("Registration Successfully");
+       return true;
+     }else {
+       alert("Please fill the form correctly");
+       return false;
+     }
+
+    });
+  });
+   </script>
+
+
+   <script>
+     $(document).ready(function () {
+       $('.owl-one').owlCarousel({
+         loop: true,
+         margin: 0,
+         nav: false,
+         responsiveClass: true,
+         autoplay: false,
+         autoplayTimeout: 5000,
+         autoplaySpeed: 1000,
+         autoplayHoverPause: false,
+         responsive: {
+           0: {
+             items: 1,
+             nav: false
+           },
+           480: {
+             items: 1,
+             nav: false
+           },
+           667: {
+             items: 1,
+             nav: false
+           },
+           1000: {
+             items: 1,
+             nav: false
+           }
+         }
+       })
+     })
+   </script>
+   <!-- //script for owlcarousel -->
+   <!-- //testimonials owlcarousel -->
+
+   <!-- script for courses -->
+   <script>
+     $(document).ready(function () {
+       $('.owl-two').owlCarousel({
+         loop: true,
+         margin: 30,
+         nav: false,
+         responsiveClass: true,
+         autoplay: false,
+         autoplayTimeout: 5000,
+         autoplaySpeed: 1000,
+         autoplayHoverPause: false,
+         responsive: {
+           0: {
+             items: 1,
+             nav: false
+           },
+           480: {
+             items: 1,
+             nav: false
+           },
+           667: {
+             items: 2,
+             nav: false
+           },
+           1000: {
+             items: 3,
+             nav: false
+           }
+         }
+       })
+     })
+   </script>
+   <!-- //script for courses -->
+
+   <!-- disable body scroll which navbar is in active -->
+   <script>
+     $(function () {
+       $('.navbar-toggler').click(function () {
+         $('body').toggleClass('noscroll');
+       })
+     });
+   </script>
+   <!-- disable body scroll which navbar is in active -->
+
+   </body>
+
+   </html>

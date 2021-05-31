@@ -1,0 +1,276 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>CMS</title>
+    <style>
+      .main-input .drop{
+      outline: none;
+      padding: 17px 20px;
+      -webkit-appearance: none;
+      border-radius: 0;
+      color: #000;
+      width: 100%;
+      font-size: 16px;
+      line-height: 26px;
+      margin-bottom: 15px;
+      border-radius: var(--card-curve);
+      border: 1px solid var(--text-color);
+      background: #fff; }
+  
+      .main-input .drop:focus{
+          border: 1px solid var(--secondary);
+      }
+      </style>
+    <!-- Google fonts -->
+    <link href="//fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
+
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="assets/css/style-starter.css">
+  </head>
+  <body>
+<!-- <header> -->
+<!-- <header w3-include-html="header.html" class="w3l-header"> -->
+	
+<!-- </header> -->
+<!-- breadcrum -->
+<section class="w3l-skill-breadcrum">
+  <div class="breadcrum">
+    <div class="container">
+      <p><a href="index.html">Home</a> &nbsp; / &nbsp; Login</p>
+    </div>
+  </div>
+</section>
+<!-- //breadcrum -->
+<section class="w3l-contacts-12">
+<div class="container py-5">
+    <div class="contacts12-main py-md-3">
+        <div class="header-section text-center">
+            <h3 class="mb-md-5 mb-4">Login
+        </div>
+        <form action="loginurl" method="post" class="" id="login">
+            <div class="main-input">
+                   <span id="error_lemail"></span>
+                <input type="email" name="user" placeholder="User Name" class="contact-input" required id="lemail"/>
+                   <span id="error_lpass"></span>
+                <input type="password" name="pass" placeholder="password" class="contact-input" required id="lpass" />
+                <span id="error_lrole"></span>
+                <select name="role" id="lrole" class="drop">
+                  <option value="">select your Role</option>
+                  <option value="Student">Student</option>
+                  <option value="Faculty">Faculty</option>
+                </select>
+                 
+              </div>
+            <div class="text-right">
+              <input type="submit" class="btn-secondary btn theme-button" value="Login">
+            </div>
+        </form>
+    </div>
+</div>
+</section>
+    <!-- footer -->
+    <footer class="w3l-footer-29-main" id="footer" w3-include-html="footer.html">
+
+
+    </footer>
+    <!-- Footer -->
+   <!-- jQuery and Bootstrap JS -->
+   <script src="assets/js/jquery-3.3.1.min.js"></script>
+   <script src="assets/js/bootstrap.min.js"></script>
+
+   <!-- Template JavaScript -->
+
+   <!-- stats number counter-->
+   <script src="assets/js/jquery.waypoints.min.js"></script>
+   <script src="assets/js/jquery.countup.js"></script>
+   <script>
+     $('.counter').countUp();
+   </script>
+   <!-- //stats number counter -->
+
+
+   <!-- testimonials owlcarousel -->
+   <script src="assets/js/owl.carousel.js"></script>
+   <script src="assets/js/w3.js"></script>
+   <script>
+    w3.includeHTML();
+    </script>
+
+    <script type="text/javascript">
+     
+     $(function() {
+
+      $("#error_lemail").hide();
+      $("#error_lpass").hide();
+      $("#error_lrole").hide();
+
+      var errorlemail = false;
+      var errorlpass = false;
+      var errorlrole = false;
+
+      $("#lemail").focusout(function(){
+        check_lemail();
+      });
+
+      $("#lpass").focusout(function(){
+        check_lpass();
+      });
+
+      $("#lrole").focusout(function(){
+        check_lrole();
+      });
+
+      function check_lemail() {
+      var pattern = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,3})?$/;
+      var email = $("#lemail").val();
+      if (pattern.test(email) && email !==''){
+        $("#error_lemail").hide();
+        $("#lemail").css("border-bottom","2px solid #34f358");
+       
+      }else {
+        $("#error_lemail").html("invalid email ");
+        $("#error_lemail").show();
+        $("#lemail").css("border-bottom","2px solid #f90a0a");
+        errorlemail = true;
+      }
+    }
+
+      function check_lpass(){
+      var password_length = $("#lpass").val().length;
+      if (password_length < 8 || password_length > 18) {
+        $("#error_lpass").html("atleast 8 to 16 charecters");
+        $("#error_lpass").show();
+        $("#lpass").css("border-bottom","2px solid #f90a0a");
+        errorlpass = true;
+      } else {
+        $("#error_lpass").hide();
+        $("#lpass").css("border-bottom","2px solid #34f458");
+      }
+    }
+
+    function check_lrole() {
+      var cou = $("#lrole").val();
+      if (cou === "slrole") {
+        $("#error_lrole").html("Select course");
+        $("#error_lrole").show();
+        $("#lrole").css("border-bottom","2px solid #f90a0a");
+        errorlrole = true; 
+      }else {
+        $("#error_lrole").hide();
+        $("#lrole").css("border-bottom","2px solid #34f458");
+      }
+    }
+
+
+    
+    $("#login").submit(function() {
+     errorlemail = false;
+     errorlpass = false;
+     errorlrole = false;
+
+     check_lemail();
+     check_lpass();
+     check_lrole();
+
+    if (errorlemail === false && errorlpass === false && errorlrole === false) {
+//       alert("login successfully");
+      return true;
+    }else {
+      alert("Inviled email or password");
+      return false;
+    }
+  
+  });
+     });
+   </script>
+
+<!-- script for owlcarousel -->
+   <script>
+     $(document).ready(function () {
+       $('.owl-one').owlCarousel({
+         loop: true,
+         margin: 0,
+         nav: false,
+         responsiveClass: true,
+         autoplay: false,
+         autoplayTimeout: 5000,
+         autoplaySpeed: 1000,
+         autoplayHoverPause: false,
+         responsive: {
+           0: {
+             items: 1,
+             nav: false
+           },
+           480: {
+             items: 1,
+             nav: false
+           },
+           667: {
+             items: 1,
+             nav: false
+           },
+           1000: {
+             items: 1,
+             nav: false
+           }
+         }
+       })
+     })
+   </script>
+   <!-- //script for owlcarousel -->
+   <!-- //testimonials owlcarousel -->
+
+   <!-- script for courses -->
+   <script>
+     $(document).ready(function () {
+       $('.owl-two').owlCarousel({
+         loop: true,
+         margin: 30,
+         nav: false,
+         responsiveClass: true,
+         autoplay: false,
+         autoplayTimeout: 5000,
+         autoplaySpeed: 1000,
+         autoplayHoverPause: false,
+         responsive: {
+           0: {
+             items: 1,
+             nav: false
+           },
+           480: {
+             items: 1,
+             nav: false
+           },
+           667: {
+             items: 2,
+             nav: false
+           },
+           1000: {
+             items: 3,
+             nav: false
+           }
+         }
+       })
+     })
+   </script>
+   <!-- //script for courses -->
+
+   <!-- disable body scroll which navbar is in active -->
+   <script>
+     $(function () {
+       $('.navbar-toggler').click(function () {
+         $('body').toggleClass('noscroll');
+       })
+     });
+   </script>
+   <!-- disable body scroll which navbar is in active -->
+
+   </body>
+
+   </html>

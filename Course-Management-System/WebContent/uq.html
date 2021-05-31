@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>CMS</title>
+    <style>
+      .main-input .drop{
+      outline: none;
+      padding: 17px 20px;
+      -webkit-appearance: none;
+      border-radius: 0;
+      color: #000;
+      width: 100%;
+      font-size: 16px;
+      line-height: 26px;
+      margin-bottom: 15px;
+      border-radius: var(--card-curve);
+      border: 1px solid var(--text-color);
+      background: #fff;
+       }
+      
+      .main-input .drop:focus{
+          border: 1px solid var(--secondary);
+      }
+      </style>
+    <!-- Google fonts -->
+    <link href="//fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
+
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="assets/css/style-starter.css">
+  </head>
+  <body>
+<!-- header -->
+<header w3-include-html="header.html" class="w3l-header">
+</header>
+<!-- //header -->
+<!-- breadcrum -->
+<section class="w3l-skill-breadcrum">
+  <div class="breadcrum">
+    <div class="container">
+      <p><a href="uq.html" class="nav-item">Upload Question</a> &nbsp; / &nbsp;</p> 
+      <p><a href="da.html" class="nav-item">Download Assignment</a> &nbsp; / &nbsp;</p> 
+      <p><a href="uca.html" class="nav-item">Upload Checked Assignment</a> &nbsp; / &nbsp;</p> 
+    </div>
+  </div>
+</section>
+<!-- //breadcrum -->
+
+<section class="w3l-contacts-12">
+  <div class="container py-5">
+    <div class="contacts12-main py-md-3">
+        <div class="header-section text-center">
+          <h3 class="mb-md-5 mb-4">Upload Questions</h3>
+        </div>
+    <form action="questioncontroller" method="post" class="" enctype="multipart/form-data">
+      <div class="main-input">
+         <select name="sub" class="drop" required>
+          <optgroup label="MCA-I SEMESTER-I">
+          <option value="CO">Computer Organization</option>
+          <option value="CPP">Problem Solving Using C++</option>
+          <option value="COSM">Computer Oriented Statistical Methods</option>
+          <option value="PM">Principles of Management</option>
+          <option value="CK">Communication Skills</option>
+          </optgroup>
+          <optgroup label="MCA-I SEMESTER-II">
+          <option value="DS">Data Structure & Algorithms</option>
+          <option value="OOP">Object Oriented Programming</option>
+          <option value="SAD">System Analysis & Design</option>
+          <option value="DC">Data Communication</option>
+          <option value="BS">Business Systems</option>
+          </optgroup>
+           <optgroup label="MCA-I SEMESTER-III">
+          <option value="OS">Operating Systems</option>
+          <option value="FSDP">File Structure & Data Processing</option>
+          <option value="JAVA">Java Programming</option>
+          <option value="CN">Computer Networks</option>
+          <option value="COOT">Computer Oriented Optimization Techniques</option>
+          </optgroup>
+           <optgroup label="MCA-I SEMESTER-IV">
+          <option value="DBMS">Database Management Systems</option>
+          <option value="CSC">Client Server Computing</option>
+          <option value="MT">Multimedia Technologies</option>
+          <option value="EC">Electronic Commerce</option>
+          <option value="ELECTIVE-I">Elective-I</option>
+          </optgroup>
+           <optgroup label="MCA-I SEMESTER-V">
+          <option value="AI">Artificial Intelligence</option>
+          <option value="SPM">Software Project Management</option>
+          <option value="SAS">System Administration & Security</option>
+          <option value="MIS">Management Information System</option>
+          <option value="ELECTIVE-II">Elective-II</option>
+          </optgroup>
+          </select>
+          <input type="file" name="file" class="drop" placeholder="select file">
+        </div>
+      <div class="text-right">
+          <button class="btn-secondary btn theme-button">Upload</button>
+      </div>
+    </form>
+</div>
+</div>
+</section>
+
+
+
+
+
+ <!-- footer -->
+      <footer class="w3l-footer-29-main" id="footer" w3-include-html="footer.html">
+    </footer>
+<!-- Footer -->
+<!-- jQuery and Bootstrap JS -->
+   <script src="assets/js/jquery-3.3.1.min.js"></script>
+   <script src="assets/js/bootstrap.min.js"></script>
+
+   <!-- Template JavaScript -->
+
+   <!-- stats number counter-->
+   <script src="assets/js/jquery.waypoints.min.js"></script>
+   <script src="assets/js/jquery.countup.js"></script>
+   <script>
+     $('.counter').countUp();
+   </script>
+   <!-- //stats number counter -->
+
+
+   <!-- testimonials owlcarousel -->
+   <script src="assets/js/owl.carousel.js"></script>
+   <script src="assets/js/w3.js"></script>
+   <script>
+    w3.includeHTML();
+    </script>
+   <!-- script for owlcarousel -->
+   <script>
+     $(document).ready(function () {
+       $('.owl-one').owlCarousel({
+         loop: true,
+         margin: 0,
+         nav: false,
+         responsiveClass: true,
+         autoplay: false,
+         autoplayTimeout: 5000,
+         autoplaySpeed: 1000,
+         autoplayHoverPause: false,
+         responsive: {
+           0: {
+             items: 1,
+             nav: false
+           },
+           480: {
+             items: 1,
+             nav: false
+           },
+           667: {
+             items: 1,
+             nav: false
+           },
+           1000: {
+             items: 1,
+             nav: false
+           }
+         }
+       })
+     })
+   </script>
+   <!-- //script for owlcarousel -->
+   <!-- //testimonials owlcarousel -->
+
+   <!-- script for courses -->
+   <script>
+     $(document).ready(function () {
+       $('.owl-two').owlCarousel({
+         loop: true,
+         margin: 30,
+         nav: false,
+         responsiveClass: true,
+         autoplay: false,
+         autoplayTimeout: 5000,
+         autoplaySpeed: 1000,
+         autoplayHoverPause: false,
+         responsive: {
+           0: {
+             items: 1,
+             nav: false
+           },
+           480: {
+             items: 1,
+             nav: false
+           },
+           667: {
+             items: 2,
+             nav: false
+           },
+           1000: {
+             items: 3,
+             nav: false
+           }
+         }
+       })
+     })
+   </script>
+   <!-- //script for courses -->
+
+   <!-- disable body scroll which navbar is in active -->
+   <script>
+     $(function () {
+       $('.navbar-toggler').click(function () {
+         $('body').toggleClass('noscroll');
+       })
+     });
+   </script>
+   <!-- disable body scroll which navbar is in active -->
+
+   </body>
+
+   </html>

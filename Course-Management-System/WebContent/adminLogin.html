@@ -1,0 +1,179 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>CMS</title>
+    <style>
+      .main-input .drop{
+      outline: none;
+      padding: 17px 20px;
+      -webkit-appearance: none;
+      border-radius: 0;
+      color: #000;
+      width: 100%;
+      font-size: 16px;
+      line-height: 26px;
+      margin-bottom: 15px;
+      border-radius: var(--card-curve);
+      border: 1px solid var(--text-color);
+      background: #fff; }
+  
+      .main-input .drop:focus{
+          border: 1px solid var(--secondary);
+      }
+      </style>
+    <!-- Google fonts -->
+    <link href="//fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
+
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="assets/css/style-starter.css">
+  </head>
+  <body>
+<!-- header -->
+<!-- <header w3-include-html="header.html" class="w3l-header"> -->
+	
+<!-- </header> -->
+<!-- //header -->
+<!-- breadcrum -->
+<section class="w3l-skill-breadcrum">
+  <div class="breadcrum">
+    <div class="container">
+      <p><a href="index.html">Home</a> &nbsp; / &nbsp; AdminLogin</p>
+    </div>
+  </div>
+</section>
+<!-- //breadcrum -->
+<section class="w3l-contacts-12">
+<div class="container py-5">
+    <div class="contacts12-main py-md-3">
+        <div class="header-section text-center">
+            <h3 class="mb-md-5 mb-4">AdminLogin
+        </div>
+        <form action="adminurl"method="post" class="">
+            <div class="main-input">
+                <input type="email" name="user" placeholder="User Name" class="contact-input" required="" />
+                <input type="password" name="pass" placeholder="password" class="contact-input" />
+            </div>
+            <div class="text-right">
+            <input type="submit" class="btn-secondary btn theme-button" value=Login>
+            </div>
+        </form>
+    </div>
+</div>
+</section>
+    <!-- footer -->
+    <footer class="w3l-footer-29-main" id="footer" w3-include-html="footer.html">
+
+
+    </footer>
+    <!-- Footer -->
+   <!-- jQuery and Bootstrap JS -->
+   <script src="assets/js/jquery-3.3.1.min.js"></script>
+   <script src="assets/js/bootstrap.min.js"></script>
+
+   <!-- Template JavaScript -->
+
+   <!-- stats number counter-->
+   <script src="assets/js/jquery.waypoints.min.js"></script>
+   <script src="assets/js/jquery.countup.js"></script>
+   <script>
+     $('.counter').countUp();
+   </script>
+   <!-- //stats number counter -->
+
+
+   <!-- testimonials owlcarousel -->
+   <script src="assets/js/owl.carousel.js"></script>
+   <script src="assets/js/w3.js"></script>
+   <script>
+    w3.includeHTML();
+    </script>
+   <!-- script for owlcarousel -->
+   <script>
+     $(document).ready(function () {
+       $('.owl-one').owlCarousel({
+         loop: true,
+         margin: 0,
+         nav: false,
+         responsiveClass: true,
+         autoplay: false,
+         autoplayTimeout: 5000,
+         autoplaySpeed: 1000,
+         autoplayHoverPause: false,
+         responsive: {
+           0: {
+             items: 1,
+             nav: false
+           },
+           480: {
+             items: 1,
+             nav: false
+           },
+           667: {
+             items: 1,
+             nav: false
+           },
+           1000: {
+             items: 1,
+             nav: false
+           }
+         }
+       })
+     })
+   </script>
+   <!-- //script for owlcarousel -->
+   <!-- //testimonials owlcarousel -->
+
+   <!-- script for courses -->
+   <script>
+     $(document).ready(function () {
+       $('.owl-two').owlCarousel({
+         loop: true,
+         margin: 30,
+         nav: false,
+         responsiveClass: true,
+         autoplay: false,
+         autoplayTimeout: 5000,
+         autoplaySpeed: 1000,
+         autoplayHoverPause: false,
+         responsive: {
+           0: {
+             items: 1,
+             nav: false
+           },
+           480: {
+             items: 1,
+             nav: false
+           },
+           667: {
+             items: 2,
+             nav: false
+           },
+           1000: {
+             items: 3,
+             nav: false
+           }
+         }
+       })
+     })
+   </script>
+   <!-- //script for courses -->
+
+   <!-- disable body scroll which navbar is in active -->
+   <script>
+     $(function () {
+       $('.navbar-toggler').click(function () {
+         $('body').toggleClass('noscroll');
+       })
+     });
+   </script>
+   <!-- disable body scroll which navbar is in active -->
+
+   </body>
+
+   </html>
